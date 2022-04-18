@@ -14,7 +14,7 @@ class IdealistaSpider(CrawlSpider):
     #start_urls = ["https://www.idealista.com/venta-viviendas/leganes/el-carrascal/"]
     #start_urls = ['https://www.idealista.com/alquiler-viviendas/madrid/zona-norte/']
 
-    start_urls = ['https://www.idealista.com/venta-viviendas/madrid/carabanchel/']
+    start_urls = ['https://www.idealista.com/venta-viviendas/palma-de-mallorca-balears-illes/']
 
     rules = (
             # Filter all the flats paginated by the website following the pattern indicated

@@ -27,37 +27,55 @@ DOWNLOADER_MIDDLEWARES = {
     'rotating_proxies.middlewares.BanDetectionMiddleware': 620    
 }
 
+# DEFAULT_REQUEST_HEADERS = {
+#     'authority': 'www.idealista.com',
+#     'upgrade-insecure-requests': '1',
+#     'sec-fetch-site': 'none',
+#     'sec-fetch-mode': 'navigate',
+#     'sec-fetch-user': '?1',
+#     'sec-fetch-dest':' document'
+# }
+
 DEFAULT_REQUEST_HEADERS = {
-    'authority': 'www.idealista.com',
-    'upgrade-insecure-requests': '1',
-    'sec-fetch-site': 'none',
-    'sec-fetch-mode': 'navigate',
-    'sec-fetch-user': '?1',
-    'sec-fetch-dest':' document'
-}
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:94.0) Gecko/20100101 Firefox/94.0',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'es',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Referer': 'https://www.idealista.com/en/',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'cross-site',
+        'Sec-Fetch-User': '?1',
+        'TE': 'trailers'
+    }
 
-FEED_EXPORT_ENCODING='latin-1'
+# FEED_EXPORT_ENCODING='latin-1'
 
-DOWNLOAD_TIMEOUT = 10
+# DOWNLOAD_TIMEOUT = 100
 
+CONCURRENT_REQUESTS_PER_DOMAIN =  1
+DOWNLOAD_DELAY = 1
 
 ###########################
 # User agent configurarion
 ###########################
 
-USER_AGENTS = [
-    ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36'),
-    ('Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0')
+# USER_AGENTS = [
+#     ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36'),
+#     ('Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0')
     
-    # Add more user agents which actually work nowadays
-]
+#     # Add more user agents which actually work nowadays
+# ]
 
 #########################
 # Proxies configuration
 #########################
 
-RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 404, 408]
+# RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 404, 408]
 
-ROTATING_PROXY_PAGE_RETRY_TIMES = 99999999999 # TODO: is it possible to setup this parameter with no limit?
-ROTATING_PROXY_LIST = get_proxies()
+# ROTATING_PROXY_PAGE_RETRY_TIMES = 99999999999  # is it possible to setup this parameter with no limit?
+# ROTATING_PROXY_LIST = get_proxies()
+
 
