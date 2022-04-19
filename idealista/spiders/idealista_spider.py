@@ -4,6 +4,8 @@ from idealista.items import IdealistaItem
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from datetime import datetime
+import time
+import random
 
 class IdealistaSpider(CrawlSpider):
     name = "idealista"
@@ -64,7 +66,11 @@ class IdealistaSpider(CrawlSpider):
                                  sqft_m2=flat[4], rooms=flat[5], floor_elevator = flat[6])
             yield item
 
+        rand_time = random.randint(1,12)
+        time.sleep(rand_time)
+
     #Overriding parse_start_url to get the first page
     parse_start_url = parse_flats
+
 
 
